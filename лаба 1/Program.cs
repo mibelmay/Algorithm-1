@@ -8,7 +8,16 @@ namespace Algorithm
         static int maxN = 50000;
         public static void Main()
         {
-            GetResults();
+            double sum = 0;
+            int i = 0;
+            double x = 1.5;
+            int[] array = { 1, 3, 2 };
+            for (; i < array.Length; i++)
+            {
+                sum += array[i] + Math.Pow(x, i - 1);
+            }
+            Console.Write(sum);
+            //GetResults();
         }
 
         public static void GetResults()

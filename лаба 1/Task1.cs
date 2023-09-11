@@ -1,4 +1,6 @@
-﻿namespace Algorithm
+﻿using System.ComponentModel.Design;
+
+namespace Algorithm
 {
     public class Task1
     {
@@ -23,6 +25,14 @@
             {
                 result *= vector[i];
             }
+        }
+
+        public static double DoGornerMethod(int[] vector, int i = 0)
+        {
+            double x = 1.5;
+            if (i >= vector.Length)
+                return 0;
+            return vector[i] + x * DoGornerMethod(vector, i + 1);
         }
     }
 }
