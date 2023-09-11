@@ -4,7 +4,7 @@ namespace Algorithm
 {
     public class Program
     {
-        static int maxValue = 50000;
+        static int maxValue = 5000;
         static int maxN = 50000;
         public static void Main()
         {
@@ -22,11 +22,11 @@ namespace Algorithm
                 for (int i = 0; i<5; i++)
                 {
                     watch.Start();
-                    MultiFunc.Start(CreateVector(n));
+                    Task1.DoMultiFunc(CreateVector(n));
                     watch.Stop();
                     sumTime += (double)watch.ElapsedMilliseconds;
                 }
-                result[n-1] = $"{n};{sumTime/5}";
+                result[n-1] = $"{n};{sumTime/5000}";
             }
             File.WriteAllLines("D:\\алгоритмы\\result.csv", result);
         }
