@@ -5,20 +5,12 @@ namespace Algorithm
     public class Program
     {
         static int maxValue = 5000;
-        static int maxN = 50000;
+        static int maxN = 2000;
         public static void Main()
         {
-            double sum = 0;
-            int i = 0;
-            double x = 1.5;
-            int[] array = { 1, 3, 2 };
-            for (; i < array.Length; i++)
-            {
-                sum += array[i] + Math.Pow(x, i - 1);
-            }
-            Console.Write(sum);
             //GetResults();
         }
+
 
         public static void GetResults()
         {
@@ -40,13 +32,18 @@ namespace Algorithm
             File.WriteAllLines("D:\\алгоритмы\\result.csv", result);
         }
 
+        //public static List<string> SelectValues()
+        //{
+
+        //}
+
         public static int[] CreateVector(int n)
         {
             int[] vector = new int[n];
             var random = new Random();
             for (int i = 0; i < n; i++)
             {
-                vector[i] = random.Next(0, maxValue);
+                vector[i] = random.Next(0, 1000);
             }
             return vector;
         }
