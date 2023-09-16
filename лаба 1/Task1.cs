@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Formats.Asn1;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Schema;
 
@@ -138,6 +139,39 @@ namespace Algorithm
                 }
             }
             return f;
+        }
+
+        public static void CocktailSort(int[] vector)
+        {
+            int b = 0;
+            int left = 0;
+            int right = vector.Length - 1;
+            while (left < right)
+            {
+                for(int i = left; i < right; i++)
+                {
+                    if (vector[i] > vector[i+1])
+                    {
+                        b = vector[i];
+                        vector[i] = vector[i+1];
+                        vector[i+1] = b;
+                        b = i;
+                    }
+                }
+                right = b;
+                if (left >= right) break;
+                for (int i = right; i > left; i--)
+                {
+                    if (vector[i-1] > vector[i])
+                    {
+                        b = vector[i];
+                        vector[i] = vector[i-1];
+                        vector[i-1] = b;
+                        b = i;
+                    }
+                }
+                left = b;
+            }
         }
     }
 }

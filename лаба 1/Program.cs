@@ -9,6 +9,22 @@ namespace Algorithm
         public static void Main()
         {
             //GetResults();
+            Matrix a = Matrix.CreateRandomMatrix(2);
+            a.WriteMatrix();
+            Console.WriteLine();
+            Matrix b = Matrix.CreateRandomMatrix(2);
+            b.WriteMatrix();
+            Console.WriteLine();
+            Matrix res = Matrix.Multiplicate(a, b, 2);
+
+            for (int i = 0; i<2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write(res.Base[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
 
 
@@ -32,10 +48,10 @@ namespace Algorithm
             File.WriteAllLines("D:\\алгоритмы\\result.csv", result);
         }
 
-        //public static List<string> SelectValues()
-        //{
+        public static void MultiplicateMatrix()
+        {
 
-        //}
+        }
 
         public static int[] CreateVector(int n)
         {
